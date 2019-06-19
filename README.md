@@ -9,3 +9,6 @@ URI Shortener utility with public click analytics
 ## Libraries used
 1. Bootstrap 4.3
 2. jQuery 3.4
+
+## Cron jobs to be setted up
+*/5 * * * * php /var/www/uri/www/bin/console uri:remove >> /var/www/uril/log/cron.log

@@ -8,6 +8,15 @@
             <form class="form-inline">
                 <div class="form-group mt-2 mb-2 w-100">
                     <input type="url" class="form-control mr-2 form-control-custom w-50" id="initial_link" aria-describedby="uriHelp" minlenght="7" maxlenght="190" placeholder="Your original URL here">
+                    <div class="input-group mr-2">
+                        <input type="text" placeholder="Expires at" class="form-control form-control-custom form_datetime" id="datetime" value="" />
+                        <span class="input-group-addon">
+                            <span class="btn btn-default form-control-copy-btn" id="datetime-btn">
+                                <i class="feather-16" data-feather="calendar" alt="Click to open calendar"></i>
+                            </span>
+                        </span>
+                    </div>
+                    
                     <button type="button" class="btn btn-light form-control-custom form-button-custom" id="shorten">Shorten url</button>
                 </div>
             </form>

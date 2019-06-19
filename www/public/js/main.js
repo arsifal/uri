@@ -1,10 +1,17 @@
 feather.replace();
 var clipboard = new ClipboardJS('#external-link-btn');
 
+$(".form_datetime").datetimepicker(
+    {
+        format: 'yyyy-mm-dd hh:ii:ss', 
+        todayBtn: true
+    }
+);
+
 $("#shorten").click(function(e) {
     e.preventDefault();
     let initial_link = $("#initial_link").val();
-    let expire_date = 0;
+    let expire_date = $("#datetime").val();
     $.ajax({
         type: "POST",
         url: "/api/generate",

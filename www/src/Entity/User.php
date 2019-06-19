@@ -18,7 +18,7 @@ class User
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Link", inversedBy="users")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      */
     private $link;
 

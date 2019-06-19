@@ -39,7 +39,7 @@ class Link
     private $expire_timestamp;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\User", mappedBy="link", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\User", mappedBy="link", orphanRemoval=true, cascade={"remove"})
      */
     private $users;
 
