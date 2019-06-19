@@ -1,5 +1,4 @@
-{% extends 'base.html.twig' %}
-{% block title %}URL Shortener{% endblock %}
+{% extends 'page.html.twig' %}
 
 {% block body %}
     {% block main %}
@@ -8,8 +7,8 @@
             <h3 class="mt-1">Simplify your links</h3>
             <form class="form-inline">
                 <div class="form-group mt-2 mb-2 w-100">
-                    <input type="text" class="form-control mr-2 form-control-custom w-50" id="uri" aria-describedby="uriHelp" maxlenght="190" placeholder="Your original URL here">
-                    <button type="button" class="btn btn-light form-control-custom form-button-custom">Shorten url</button>
+                    <input type="url" class="form-control mr-2 form-control-custom w-50" id="initial_link" aria-describedby="uriHelp" maxlenght="190" placeholder="Your original URL here">
+                    <button type="button" class="btn btn-light form-control-custom form-button-custom" id="shorten">Shorten url</button>
                 </div>
             </form>
             <h6 class="form-text pb-2 pt-1">All URLs and click analytics are public and can be accessed by anyone</h6>
@@ -17,12 +16,12 @@
     </section>
     {% endblock %}
     {% block result %}
-    <section>
+    <section id="result" style="display: none;">
         <div class="container w-100 pt-4 pb-4">
             <h3 class="mt-1">Here is your shortened link</h3>
             <div class="mt-2 mb-2 w-100">
                 <div class="input-group w-50">
-                    <input id="external-link" type="text" readonly class="form-control form-control-copy-text" id="uri" placeholder="Here would be your shortened link">
+                    <input id="external-link" type="text" readonly class="form-control form-control-copy-text" placeholder="Here would be your shortened link">
                     <span class="input-group-btn">
                         <button id="external-link-btn" class="btn btn-default form-control-copy-btn" data-clipboard-target="#external-link">
                             <i class="feather-16" data-feather="copy" alt="Copy to clipboard"></i>
@@ -30,45 +29,8 @@
                     </span>
                 </div>
             </div>
-            <h6 class="form-text pb-2 pt-1">Click analytics for this link is available by <a href="#"><i class="feather-16" data-feather="external-link"></i> url</a>.</h6>
+            <h6 class="form-text pb-2 pt-1">Click analytics for this link is available by <a href="#" id="external-analytics"><i class="feather-16" data-feather="external-link"></i> url</a>.</h6>
         </div>   
     </section>
     {% endblock %}
-{% endblock %}
-
-{% block navbar %}
-    <div class="collapse" id="navbarHeader">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 col-md-7 py-4">
-              <h4 class="text-dark">About</h4>
-              <p class="text-muted">URL Shortener is an utility that helps you to convert long links into shorter once. Any link that is shortened with this service becomes public and can be viewed by any user if this service. Anyone can see clicks analytics for any link that is shortened with this service.</p>
-            </div>
-            <div class="col-sm-4 offset-md-1 py-4">
-              <h4 class="text-dark">Contact</h4>
-              <ul class="list-unstyled">
-                <li><a href="skype:live:961df3717db6fea0?chat" class="text-muted">Skype</a></li>
-                <li><a href="mailto:arsifal.one@gmail.com" class="text-muted">Email</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="navbar navbar-light box-shadow">
-        <div class="container d-flex justify-content-between">
-          <a href="/" class="navbar-brand d-flex align-items-center">
-            <i data-feather="external-link" class="mr-2"></i>
-            <strong>URL Shortener</strong>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-      </div>
-{% endblock %}
-
-{% block footer %}
-<div class="container">
-  <span class="text-muted">URL Shortener is &copy; Ruslan Valis</span>
-</div>
 {% endblock %}

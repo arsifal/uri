@@ -52,6 +52,12 @@ class Link
     {
         return $this->id;
     }
+    
+    public function genUniqueCode(): ?string
+    {
+        $id = $this->id + 100000000000;
+        return base_convert($id, 10, 36);
+    }
 
     public function getInitialLink(): ?string
     {
