@@ -11,4 +11,4 @@ URI Shortener utility with public click analytics
 2. jQuery 3.4
 
 ## Cron jobs to be setted up
-*/5 * * * * php /var/www/uri/www/bin/console uri:remove >> /var/www/uri/log/cron.log
+*/5 * * * * php /var/www/uri/www/bin/console uri:remove >> /var/www/uri/www/var/log/cron.log
