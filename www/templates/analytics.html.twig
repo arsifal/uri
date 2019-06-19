@@ -1,0 +1,43 @@
+{% extends 'page.html.twig' %}
+
+{% block body %}
+    {% block main %}
+    <section class="bg-blue">
+        <div class="container bg-blue w-100 text-white pt-4 pb-4">
+            <h3 class="mt-1">Analytics for the link</h3>
+            <form class="form-inline">
+                <div class="form-group mt-2 mb-2 w-100">
+                    <input type="url" readonly="true" class="form-control mr-2 form-control-custom w-50" id="initial_link" value="{{ link }}" >
+                </div>
+            </form>
+            <h6 class="form-text pb-2 pt-1">All URLs and click analytics are public and can be accessed by anyone</h6>
+        </div>
+    </section>
+    <section>
+        <div class="container w-100">
+            <table class="table w-100">
+                <thead>
+                    <tr>
+                        <th scope="col w-25">IP</th>
+                        <th scope="col w-25">Country</th>
+                        <th scope="col w-25">City</th>
+                        <th scope="col w-25">Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in results %}
+                    <tr>
+                        <td>{{ item.ip }}</td>
+                        <td>{{ item.country }}</td>
+                        <td>{{ item.city }}</td>
+                        <td>{{ item.timestamp.date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    {% endblock %}
+    {% block footercontainer %}
+    {% endblock %}
+{% endblock %}
