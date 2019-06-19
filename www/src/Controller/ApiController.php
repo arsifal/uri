@@ -5,15 +5,21 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Link;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class GenerateController extends AbstractController
+class ApiController extends AbstractController
 {
     /**
-     * @Route("/generate/{url}/{expire_date}", methods={"POST"}, name="generate", defaults={"expire_date"="0000-00-00 00:00:00"})
+     * @Route("/api/generate", methods={"POST"}, name="generate")
      */
-    public function expirable($url, $expire_date)
+    public function generate()
     {
+        # get parameters
+        $request = Request::createFromGlobals();
+        $url = $request->request->get("initial_link");
+        $expire_date = $request->request->get("expire_date", "0000-00-00 00:00:00");
+        
         # prepare entity manager
         $entityManager = $this->getDoctrine()->getManager();
         

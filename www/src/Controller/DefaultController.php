@@ -25,12 +25,12 @@ class DefaultController extends AbstractController
         $link = $this->getDoctrine()->getRepository(Link::class)->findOneBy(["output_link" => $url]);
         if (!$link) {
             throw $this->createNotFoundException(
-                'No product found for id '.$url
+                'Looks like you have incorrect URL: '. $url
             );
         }
         
         # reidrect user to initial url
-        $this->redirect($link->getInitialLink());
+        return $this->redirect($link->getInitialLink());
     }
     
 }
