@@ -34,7 +34,7 @@ class Link
     private $create_timestamp;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $expire_timestamp;
 

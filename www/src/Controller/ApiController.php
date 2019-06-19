@@ -18,7 +18,7 @@ class ApiController extends AbstractController
         # get parameters
         $request = Request::createFromGlobals();
         $url = $request->request->get("initial_link");
-        $expire_date = $request->request->get("expire_date", "0000-00-00 00:00:00");
+        $expire_date = $request->request->get("expire_date", 0);
         
         # prepare entity manager
         $entityManager = $this->getDoctrine()->getManager();
@@ -27,7 +27,9 @@ class ApiController extends AbstractController
         $link = new Link();
         $link->setInitialLink($url);
         $link->setCreateTimestamp(new \DateTime());
-        $link->setExpireTimestamp(new \DateTime($expire_date));
+        if ($expire_date) {
+            $link->setExpireTimestamp(new \DateTime($expire_date));
+        }
         $link->setOutputLink("");
         
         # create entry

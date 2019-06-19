@@ -4,7 +4,7 @@ var clipboard = new ClipboardJS('#external-link-btn');
 $("#shorten").click(function(e) {
     e.preventDefault();
     let initial_link = $("#initial_link").val();
-    let expire_date = "0000-00-00 00:00:00";
+    let expire_date = 0;
     $.ajax({
         type: "POST",
         url: "/api/generate",
