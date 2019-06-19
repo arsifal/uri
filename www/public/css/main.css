@@ -1,0 +1,61 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px; /* Margin bottom by footer height */
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px; /* Set the fixed height of the footer here */
+  line-height: 50px; /* Vertically center the text there */
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
+.form-control-custom {
+    font-size: 90%;
+}
+.form-button-custom {
+    text-transform: uppercase;
+    color: #366ED1;
+    font-weight: 600;
+}
+.form-button-custom:hover {
+    color: #366ED1;
+}
+.bg-blue {
+    background-color: #366ED1;
+}
+.bg-grey {
+    background-color: #EEEEEE;
+}
+.feather-16{
+    width: 16px;
+    height: 16px;
+}
+.feather-18{
+    width: 18px;
+    height: 18px;
+}
+.feather-24{
+    width: 24px;
+    height: 24px;
+}
+.feather-32{
+    width: 32px;
+    height: 32px;
+}
+.form-control-copy-text {
+    border-right: 0;
+}
+.form-control-copy-btn {
+    background-color: #EEEEEE;
+    border: 1px solid #CED4DA;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 100%;
+    line-height: 16px;
+}

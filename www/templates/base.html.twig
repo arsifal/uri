@@ -3,10 +3,27 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet"/>
+        {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    <body class="bg-light">
+        <header>
+            {% block navbar %}{% endblock %}
+        </header>
+        <main role="main">
+            {% block body %}{% endblock %}
+        </sect>
+        <footer class="footer bg-grey">
+            {% block footer %}{% endblock %}
+        </footer>
+        {% block javascripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/feather-icons"></script> 
+        <script src="{{ asset('js/clipboard.js') }}"></script>
+        <script src="{{ asset('js/main.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
